@@ -9,7 +9,8 @@ Previo a iniciar el desarrollo de software para web usando el framework de NodeJ
 |No.|Descripción|Estatus|
 |--|--|--|
 |1.|Metodología de Evaluación|✅ Finalizada|
-|2.|Inicialización del Proyecto de Fundamentos de JS|❇️ Activa|
+|2.|Inicialización del Proyecto de Fundamentos de JS|✅ Finalizada|
+|3.|Ejercicio 01: Declaración de Variables en JS|Activa|
 
 ### Autor
 Osvaldo Abishai Flores Campos
