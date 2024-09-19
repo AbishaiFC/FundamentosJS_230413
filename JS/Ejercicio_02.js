@@ -20,7 +20,7 @@ console.log(`El tipo de dato de la variable cliente es: ${typeof(cliente)}`);
 
 // 2. BOOLEAN - Boleanos - TRUE/FALSE (Falso/Verdadero)
 
-console.warn("--- Tipo de Dato: BOOLEAN - True/False")
+console.warn("--- Tipo de Dato - BOOLEAN (Booleano - True/False)")
 let esPremium = "No lo se";
 console.log(`¿Es el cliente Premium?: ${esPremium}`)
 console.log(`El tipo de dato de la variable esPremium es:  ${typeof(esPremium)} `);
@@ -49,7 +49,7 @@ const costo_producto = 10.50
 let saldo_cuenta= -2500.40
 let monto_transaccion;
 
-console.warn("--- Tipo de Dato - NUMBER (Números, positivos, negativos, decimales, flotantes");
+console.warn("--- Tipo de Dato - NUMBER (Números, positivos, negativos, decimales, flotantes)");
 console.log(`Tu saldo al día de hoy es de ${saldo_cuenta}, (Tipo de Dato = ${typeof(saldo_cuenta)}`);
 console.log(`El producto que has seleccionado cuesta: ${costo_producto}`)
 cantidad=8;
@@ -62,3 +62,132 @@ console.log(`Tu nuevo saldo es de: ${saldo_cuenta}`);
 
 monto_transaccion=1500;
 console.log(`Tu abono de: ${monto_transaccion} ha sido recibido, tu nuevo saldo es de: ${(monto_transaccion+saldo_cuenta)}`);
+
+// 4. STRING (Cadena de Caractéres)
+const alumno = "Osvaldo Abishai Flores Campos";
+let producto;
+
+console.warn("--- Tipo de Dato - STRING (Cadena de Caractéres)");
+console.log(`El nombre del alumno es: ${alumno}, que es de tipo de dato ${typeof(alumno)}`);
+
+// Inicializamos el valor de la variabole producto
+producto = "MONITOR DE 20 PULGADAS\" FULL HD"
+console.log(`El nombre del producto es : ${producto}, que es un tipo de dato ${typeof(producto)}`);
+
+//Manipulando los STRINGS
+console.log(`Más adelante podremos transformar el contenido de los STRING usanddo los métodos y funciones específicas, como cónvertir su valor a mayusculas: ${alumno} => ${alumno.toUpperCase()}`);
+console.log(`O en su defecto a minusculas: ${producto} => ${producto.toLowerCase()}`);
+
+// 5. BIGINT (Número de Mayor Amplitud)
+console.warn("--- Tipo de Dato - BIGINT (Número Amplio");
+const numeroGrande = 1234567890
+const numeroGrande2 = 12345678901234567890
+let numeroGrande3 = 123456789012345678901234567890
+let numeroGrande4 = 1234567890123456789012345678901234567890
+
+console.log(`El primer experimento de un numero grande es ${numeroGrande}, que si es soportado por Number, y su tipo de dato es: ${typeof(numeroGrande)}`);
+console.log(`El segundo experimento de un numero grande es ${numeroGrande2}, que si es soportado por Number, y su tipo de dato es: ${typeof(numeroGrande2)}`);
+console.log(`El tercero experimento de un numero grande es ${numeroGrande3}, que no es soportado por Number, perdiendo precisión, y su tipo de dato es: ${typeof(numeroGrande3)}`);
+console.log(`El cuarto experimento de un numero grande es ${numeroGrande4}, que no es soportado por Number, perdiendo precisión, y su tipo de dato es: ${typeof(numeroGrande4)}`);
+
+numeroGrande3 = BigInt("123456789012345678901234567890")
+console.log(`El quinto experimento de un numero grande es ${numeroGrande3}, que ya fue convertido a BIGINT, y su tipo de dato es: ${typeof(numeroGrande3)}`);
+
+numeroGrande4 = BigInt("1234567890123456789012345678901234567890")
+console.log(`El Sexto experimento de un numero grande es ${numeroGrande4}, que ya fue convertido a BIGINT, y su tipo de dato es: ${typeof(numeroGrande4)}`);
+
+// ¿Se pueden realizar operaciones matemáticas entren un NUMBER y un BIGINT?
+const numero = 129;
+console.log(`Intentando relalizar la suma de: numero + numeroGrande3, el resultado es : ${BigInt(numero)+numeroGrande3}`);
+
+
+// 6. Symbol (Símbolo)
+
+console.warn("--- Tipo de Dato - Symbol (Símbolo o Único");
+const numero1 = 5;
+const numero2 = 5.0;
+const numero3 = "5";
+const numero4 = "5.0";
+const numero5 = Symbol(5)
+const numero6 = Symbol(5)
+const numero7 = Symbol(5.0)
+const numero8 = Symbol("5")
+const numero9 = Symbol("5.0")
+
+// Pruebas comparativas
+console.log("¿Es 5 = 5.0?")
+if(numero1 == numero2){
+    console.log("Se comparó numero1 con numero2, determinando que tienen el mismo valor.")
+}else{
+    console.log("Se comparó numero1 con numero2, determinando que NO tienen el mismo valor.")
+}
+
+console.log("¿Es 5 = \"5\"?")
+if(numero1 == numero3){
+    console.log("Se comparó numero1 con numero3, determinando que tienen el mismo valor.")
+}else{
+    console.log("Se comparó numero1 con numero3, determinando que NO tienen el mismo valor.")
+}
+
+console.log("¿Es 5 = \"5\"?")
+if(numero1 === numero3){ // Estrictamente igual (Equidad)= Mismo valor, mismo tipo de dato
+    console.log("Se comparó numero1 con numero3, determinando que tienen el mismo valor.")
+}else{
+    console.log("Se comparó numero1 con numero3, determinando que tienen el mismo valor pero NO el mismo tipo de dato.")
+}
+
+console.log("¿Es 5 = \"5.0\"?")
+if(numero1 == numero4){
+    console.log("Se comparó numero1 con numero4, determinando que tienen el mismo valor.")
+}else{
+    console.log("Se comparó numero1 con numero4, determinando que NO tienen el mismo valor.")
+}
+
+console.log("¿Es 5 = \"5.0\"?")
+if(numero1 === numero4){ // Estrictamente igual (Equidad)= Mismo valor, mismo tipo de dato
+    console.log("Se comparó numero1 con numero4, determinando que tienen el mismo valor.")
+}else{
+    console.log("Se comparó numero1 con numero4, determinando que tienen el mismo valor pero NO el mismo tipo de dato.")
+}
+
+console.log(`¿Es 5 = Symbol(5)?, antes de compararlos analizamos que tipo de dato son: siendo numero1 del tipo:${typeof(numero1)} "y numero5 del tipo:" ${typeof(numero5)}`)
+if(numero1 === numero5){
+    console.log("Se comparó numero1 con numero5, determinando que tienen el mismo valor.")
+}else{
+    console.log("Se comparó numero1 con numero5, determinando que tienen el mismo valor pero NO el mismo tipo de dato.")
+}
+
+console.log(`¿Es 5 = Symbol(5)?, antes de compararlos analizamos que tipo de dato son: siendo numero1 del tipo:${typeof(numero1)} "y numero5 del tipo:" ${typeof(numero6)}`);
+if(numero1 == numero6){
+    console.log("Se comparó numero1 con numero6, determinando que tienen el mismo valor.")
+}else{
+    console.log("Se comparó numero1 con numero6, determinando que NO tienen el mismo valor.")
+}
+
+console.log("¿Es 5 = Symbol(5.0)?")
+if(numero1 == numero7){
+    console.log("Se comparó numero1 con numero7, determinando que tienen el mismo valor.")
+}else{
+    console.log("Se comparó numero1 con numero7, determinando que NO tienen el mismo valor.")
+}
+
+console.log("¿Es 5 = Symbol(\"5\")?")
+if(numero1 === numero8){ 
+    console.log("Se comparó numero1 con numero8, determinando que tienen el mismo valor.")
+}else{
+    console.log("Se comparó numero1 con numero9, determinando que NO tienen el mismo valor.")
+}
+
+console.log("¿Es 5 = Symbol(\"5.0\")?")
+if(numero1 == numero9){
+    console.log("Se comparó numero1 con numero9, determinando que tienen el mismo valor.")
+}else{
+    console.log("Se comparó numero1 con numero9, determinando que NO tienen el mismo valor.")
+}
+
+console.log("¿Es Symbol(5) = Symbol(5)?")
+if(numero5 == numero6){
+    console.log("Se comparó numero5 con numero6, determinando que tienen el mismo valor.")
+}else{
+    console.log("Se comparó numero5 con numero6, determinando que NO tienen el mismo valor.")
+}
