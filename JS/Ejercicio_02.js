@@ -191,3 +191,48 @@ if(numero5 == numero6){
 }else{
     console.log("Se comparó numero5 con numero6, determinando que NO tienen el mismo valor.")
 }
+
+//7. NULL
+console.warn("--- Tipo de Dato - NULL (Nulo o Vacío)");
+//El tipo de dato nulo se asigna cuando el sistema o el usuario saben de la variable pero prefieren dejarlo vacío, bajando su consentimiento, a diferencia de UNDEFINED que es un valor desconocido asignado por DEFAULT por JS.
+let nombreUsuario = null;
+let passUsuario = null;
+let generoUsuario = null;
+let estatusRelacionSentimental = null;
+let fecha_ultimoPost;
+//Supongamos que estamos programando una Red Social, tipo Facebook, en la que parte de la información se publicará en el perfil del usuario.
+//Si el usuario no ha iniciado sesión en el dispositivo móvil o en la aplicación web, puede explorar contenido de acceso publico. Y no existira información para mostrar.
+//En la HU (Historia de Usuario), que el usuario desea logearse debera ingresar su número telefónico o correo electrónico y una contraseña que debemos guardar en las variables previamente declaradas.
+//Supongamos que el usuario: Idai Vargas Galindo, con correo electrónico 230574@utxicotepec.edu.mx desea ingresar con su contraseña: pass1234
+nombreUsuario = "230413@utxicotepec.edu.mx";
+passUsuario = "pass1234";
+//En este momento de ejecución del sistema no sabemos su género, ni su estatus de relación sentimental.
+console.log(`El usuario: ${nombreUsuario} esta intentando logearse con una contraseña de: ${passUsuario}`);
+//Lo que prosigue es que el sistema cotejara los datos ingresados con la base de datos y en caso de que los datos sean correctos comenzará la sesión en la plataforma actualizando estos valores.
+//Dado que Idai es del Genero Femenino, y denota que su estatus de relación no ha sido capturado o lo mantiene en privado esto genera la actualización de los valores de las variables.
+generoUsuario = "H"
+estatusRelacionSentimental = null
+console.log(`El usuario: ${nombreUsuario}, se ha loggeado existosamente, al tener acceso a su información de perfil podemos deducir que es del género ${generoUsuario} y que su estatus de realación es: ${estatusRelacionSentimental} y su ultima publicación la realizó el: ${fecha_ultimoPost}`);
+//comparando NULL vs UNDEFINED
+//Si bien UNDEFINED y NULL tienen el mismo valor, no tienen el mismo tipo de datos
+console.log("Comparación de la equidad entre Undefined y Null:")
+console.log(
+    (fecha_ultimoPost == estatusRelacionSentimental) ?
+    "Ambas variables tiene el mismo valor":
+    "Las variables no tiene el mismo valor"
+);
+console.log("Comparación de la identidad entre Undefined y Null:")
+console.log(
+    (fecha_ultimoPost === estatusRelacionSentimental) ?
+    "Ambas variables tiene el mismo valor y el mismo tipo de dato":
+    "Las variables tiene el mismo calor, pero no el mismo tipo de dato"
+);
+
+// 8. FUNCTION (Funciones)
+console.warn("--- Tipo de Dato FUNCTION (Función")
+//Declaramos una funnción que nos permita recibir un parametro, en este casó el nombre de la persona a saludar, y le enviamos un saludo, esta función le asignamos una cosntante.
+const saludar = function(nombre){return `Hola, ${nombre}!`}
+//Invocamos la función declarada
+console.log(saludar('Abishai'));
+//Y que tipo de dato tiene esta constante
+console.log(`El tipo de dato de la constante saludar es: ${typeof(saludar)}`)
