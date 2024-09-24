@@ -100,7 +100,8 @@ console.log(`Los datos del producto son : \n
         Producto_Clave: 316,
         Comprador_Clave : 3216,
         Cantidad: 2,
-        Estatus: "Carrito de Compra"
+        Estatus: "Carrito de Compra",
+        TipoPago: "Tarjeta de Crédito"
     }
 
     // En base a los tres objetos necesarios calcular el costo de la compra y si le alcanza con su saldo a favor
@@ -109,10 +110,60 @@ let {Cantidad: Pedido_Cantidad } = Pedido;
 let {Saldo_Actual: Saldo_Actual} = Comprador;
 let Costo_Compra = ProductoPrecio*Pedido_Cantidad;
 
-console.log(`El cliente ha agregado a su carrito de compras  ${Pedido_Cantidad}unidades, con un costo total de: ${(Costo_Compra)}`)
+console.log(`El cliente ha agregado a su carrito de compras  ${Pedido_Cantidad} unidades, con un costo total de: ${(Costo_Compra)}`)
 
 if(Costo_Compra< Saldo_Actual){
 console.log("El  cliente tiene el saldo suficiente");
 }else{
     console.log("El  cliente NO tiene el saldo suficiente");
 }
+
+// Actualizar el valor de los objetos
+
+console.log("%c4.- Actualización de los valores de las propiedades de un Objeto", style_console);
+
+console.log(`El objeto actulmenbte tiene los siguientes valores: `);
+console.log(JSON.stringify(Producto2,null, 2));
+console.log(`Por cuestiones de inflación el costo del producto ha cambiado y debe ser actualizado.... de $6,829.00 a $6,915.50`)
+
+
+// Para modificar el valor de un objeto basta con igualar el nuevo valor de la propiedad deseaada
+
+Producto2.Precio=6915.50;
+console.log(`Los nuevos valores del producto son: `);
+console.log(Producto2);
+
+// ¿Puedo cambiar no solo el valor, s no el tipo de dato de un objeto de JavaScript?
+console.log(`El Objeto actualmente tiene los siguientes valores`)
+var tipoDisponibilidad = typeof(Producto.disponibilidad)
+console.log(`El  tipo de dato de la disponibilidad es ${tipoDisponibilidad}`)
+console.log(JSON.stringify(Producto2,null, 2)); // Disponibilidad Booleano
+Producto2.Disponibilidad="Si";
+let nuevotipoDisponibilidad= typeof(Producto2.Disponibilidad)
+console.log(Producto2);
+console.log(`El nuevo tipo de dato de la Disponibilidad es: ${nuevotipoDisponibilidad}`);
+
+
+
+// Agregar nuevas propiedades al objeto
+
+console.log("%c5.- Agregar nuevas propiedades al Objeto", style_console);
+
+// Para agfregar una nueva propiedad utilizaremos el nombre del Objeto los corchetes [] y el nuevo de la propiedad de su valor por defecto.
+console.log("Los datos actuales del Comprador son: ")
+    console.table(Comprador);
+
+Comprador['Direccion']= "Av. Benito Juárez, No. 1525, Interior 4D, Xixotepec de Juárez, Puebla, México";
+Comprador['Tipo']="Nuevo Cliente"
+Comprador['ActividadReciente']= true
+Comprador['TotalCompras']= 3516.25
+console.log("Despues de haber agregado las propiedades Dirección, Tipo, ActividadReciente y TotalCompras... ")
+console.table(Comprador);
+
+//ERliminar propiedades existentes al Objeto
+console.log("%c6.-Eliminar las propiedades existentes de un Objeto", style_console);
+console.log("La estructura y vbalores dfel producto del Objeto PEDIDO previos a la m0odificación")
+console.table(Pedido)
+delete Pedido.TipoPago
+console.log("Despues de la modificación... ")
+console.table(Pedido)
