@@ -12,7 +12,8 @@ Previo a iniciar el desarrollo de software para web usando el framework de NodeJ
 |2.|Inicialización del Proyecto de Fundamentos de JS|8|✅ Finalizada|
 |3.|Ejercicio 01: Declaración de Variables en JS|6|✅ Finalizada|
 |4.|Ejercicio 02: Tipos de de Dato (Undefined, Boolean, Number, String, BigInt, Symbol, Null, Function)|10|✅ Finalizada|
-|5.|Ejercicio 03: Repaso de objetos en JS|0|✳	Pendiente|
+|5.|Ejercicio 03: Repaso de objetos en JS|19|✅ Finalizada|
+|6.|Ejercicio 04: Repaso de Arreglos en JS|18|✅ Finalizada|
 
 ### Autor
 Osvaldo Abishai Flores Campos
