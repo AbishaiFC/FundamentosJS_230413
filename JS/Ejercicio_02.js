@@ -24,17 +24,15 @@ console.warn("--- Tipo de Dato - BOOLEAN (Booleano - True/False)")
 let esPremium = "No lo se";
 console.log(`¿Es el cliente Premium?: ${esPremium}`)
 console.log(`El tipo de dato de la variable esPremium es:  ${typeof(esPremium)} `);
-
 console.log(`Asignando el valor\"true\" a la variable. `)
 esPremium="true"
 console.log(`El tipo de dato de la variable esPremium es:  ${typeof(esPremium)} `);
 console.log(`¿Es el cliente Premium?: ${esPremium}`);
-console.log(`Cambiando el valor de le esPremium a false`)
-
+console.log(`Cambiando el valor de la variable esPremium a false`)
 esPremium=true
 console.log(`El tipo de dato de la variable esPremium es:  ${typeof(esPremium)} `);
 console.log(`¿Es el cliente Premium?: ${esPremium}`);
-console.log(`Cambiando el valor de esPremium a false`)
+console.log(`Cambiando el valor de la variable esPremium a false`)
 esPremium=0
 
 if(esPremium)
@@ -203,13 +201,13 @@ let fecha_ultimoPost;
 //Supongamos que estamos programando una Red Social, tipo Facebook, en la que parte de la información se publicará en el perfil del usuario.
 //Si el usuario no ha iniciado sesión en el dispositivo móvil o en la aplicación web, puede explorar contenido de acceso publico. Y no existira información para mostrar.
 //En la HU (Historia de Usuario), que el usuario desea logearse debera ingresar su número telefónico o correo electrónico y una contraseña que debemos guardar en las variables previamente declaradas.
-//Supongamos que el usuario: Idai Vargas Galindo, con correo electrónico 230574@utxicotepec.edu.mx desea ingresar con su contraseña: pass1234
+//Supongamos que el usuario: Osvaldo Abishai Flores Campos, con correo electrónico 230413@utxicotepec.edu.mx desea ingresar con su contraseña: pass1234
 nombreUsuario = "230413@utxicotepec.edu.mx";
 passUsuario = "pass1234";
 //En este momento de ejecución del sistema no sabemos su género, ni su estatus de relación sentimental.
 console.log(`El usuario: ${nombreUsuario} esta intentando logearse con una contraseña de: ${passUsuario}`);
 //Lo que prosigue es que el sistema cotejara los datos ingresados con la base de datos y en caso de que los datos sean correctos comenzará la sesión en la plataforma actualizando estos valores.
-//Dado que Idai es del Genero Femenino, y denota que su estatus de relación no ha sido capturado o lo mantiene en privado esto genera la actualización de los valores de las variables.
+//Dado que Abishai es del Genero Masculino, y denota que su estatus de relación no ha sido capturado o lo mantiene en privado esto genera la actualización de los valores de las variables.
 generoUsuario = "H"
 estatusRelacionSentimental = null
 console.log(`El usuario: ${nombreUsuario}, se ha loggeado existosamente, al tener acceso a su información de perfil podemos deducir que es del género ${generoUsuario} y que su estatus de realación es: ${estatusRelacionSentimental} y su ultima publicación la realizó el: ${fecha_ultimoPost}`);
@@ -225,7 +223,7 @@ console.log("Comparación de la identidad entre Undefined y Null:")
 console.log(
     (fecha_ultimoPost === estatusRelacionSentimental) ?
     "Ambas variables tiene el mismo valor y el mismo tipo de dato":
-    "Las variables tiene el mismo calor, pero no el mismo tipo de dato"
+    "Las variables tiene el mismo valor, pero no el mismo tipo de dato"
 );
 
 // 8. FUNCTION (Funciones)
