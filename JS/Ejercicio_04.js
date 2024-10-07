@@ -212,13 +212,79 @@ console.log("%c10.- Métodos para la manipulacvión de Arreglos INMUTABLES", sty
 
 let signosZodicacales = ["Aries", "Tauro", "Geminis", "Cáncer", "Leo", "Virgo", "Libra", "Escorpio", "Sagitario", "Capricornio", "Acuario", "Piscis"]
 
-    // Desestructuración de Arreglos
+// Desestructuración de Arreglos
 
-    let [signo1, ,signo3,,,,signo7,,,,,] = signosZodicacales;
-    console.log(`El primer signo zodical es: ${signo1}`)
-    console.log(`El tercer signo zodical es: ${signo3}`)
-   // console.log(`El cuarto signo zodical es: ${signo4}`)
-    console.log(`El séptimo signo zodical es: ${signo7}`)
-    
-    // Congelamos el arreglo volviendo INMUTABLE;
-    Object.freeze(signosZodicacales);
+let [signo1, ,signo3,,,,signo7,,,,,] = signosZodicacales;
+console.log(`El primer signo zodical es: ${signo1}`)
+console.log(`El tercer signo zodical es: ${signo3}`)
+// console.log(`El cuarto signo zodical es: ${signo4}`)
+console.log(`El séptimo signo zodical es: ${signo7}`)
+
+// Congelamos el arreglo volviendo INMUTABLE;
+Object.freeze(signosZodicacales);
+
+console.log("%c11.- Filtrado de elementos dentro de un Arreglo utilizando el metodo FILTER", style_console);
+
+console.table(estudiantes);
+
+// Antes de filtrar datos llenemos el arreglo con 10 elementos
+
+estudiantes.push("Ángel Rufino")
+estudiantes.push("Esther Gonzáles")
+estudiantes.push("Lorena Galindo")
+estudiantes.push("Jonathan Ramírez")
+estudiantes.push("Ailton Artiaga")
+estudiantes.push("Isaac Fosado")
+estudiantes.push("Abril Guzman")
+console.table(estudiantes);
+
+Object.freeze(estudiantes);
+// Filter es yun metodo que recorre loa elementos de un arreglo hacuiendo alguna tarea en especifico, lo que tenemos que considerar es que este nuevo aarreglo resultante es un objeto que puede ser mutable
+
+console.log("Filtrando los primeros 5 elementos");
+
+let nuevoEstudiantes = estudiantes.filter((estudiante, index) => index<5);
+
+console.table(nuevoEstudiantes);
+console.table(filtrarPrimeros5(estudiantes));
+
+// Filtrar a los estudiantes que su noombre tenga mas de 15 carácteres
+let nuevoEstudiantesNombre = estudiantes.filter((estudiante) => estudiante.length>15);
+console.table(nuevoEstudiantesNombre);
+
+
+
+// Intentamos modificart el arreglo inmutabke
+/* estudiantes.pop()
+console.table(estudiantes); */
+
+// Intentamos modificar el arreglo que no ha sido congelado
+nuevoEstudiantes.unshift("Diego Tecorralco")
+console.table(nuevoEstudiantes);
+
+function filtrarPrimeros5(arregloEstudiantes){
+    let listaFiltrada = []       
+    for (let i=0; i<5; i++){
+        listaFiltrada.push(arregloEstudiantes[i]);
+    }
+    return listaFiltrada;
+}
+
+// Filtrado de Datos - Transformando los datos
+console.log("%c12.- Filtrado de Elemento dentro de un Arreglo utilizando el metodo MAP, en el que necesitamos transofrmarlos", style_console);
+console.log("Imprimimos los elementos actuales de los signosZodicales: ")
+console.log(signosZodicacales);
+
+// Que podemos hacer si necesitamos el mismo arreglo pero ahora con todos sus elementos con letras MAYUSCULAS   
+
+console.table(signosZodicacales.map(signosZodicacales => signosZodicacales.toUpperCase()));
+
+// Reducción de elemend¿tos de un arreglo, se usa cuando debemos hacer operaciones matemáticas o cuantitativas a un arreglo, como obtener totales, la idea es reducir la lista a un valor mas simplificado
+
+const costosListaCompras = [15,52.50,16.90,32.50,28,105, 45.2, 94.10]
+
+// Cómo podemos calcular el total de una lista de costos en un carrito de compras
+
+console.log("Los precios son: ")
+console.table(costosListaCompras)
+console.log(`El total de la compra es: ${costosListaCompras.reduce((total, precio)=> total+precio,0).toFixed(2)}`)
