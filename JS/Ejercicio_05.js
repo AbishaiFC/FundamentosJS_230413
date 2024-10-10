@@ -118,11 +118,11 @@ if(fechaActual >= inicioPrimavera && fechaActual < inicioVerano){
 
   // Calculando tu generación en base a tu edad
 
-  let anioNacimiento= 2003;
+  let anioNacimiento= 2005;
   let asignGeneration = (anioNacimiento)=>{
   
   switch (true){
-    case (anioNacimiento>1968): 
+    case (anioNacimiento<1968): 
     return "Baby Boomers";
 
     case (anioNacimiento>1968 && anioNacimiento<=1980): 
@@ -138,4 +138,142 @@ if(fechaActual >= inicioPrimavera && fechaActual < inicioVerano){
     return "Cristalitos";
 }
 }
-console.log(`Dado que nació en el año 2005 soy de la generación: ${asignGeneration(2005)}`)
+console.log(`Dado que nací en el año 2005 soy de la generación: ${asignGeneration(2005)}`)
+
+console.log("%c4.- Manejo de Excepciones (TRY / CATCH) ",style_console);
+
+// En algunas ocasuiones existiran errores que no son culpa del programa, si no del usuario, la red, el SO, o incluso de un middleware..., pero si duda debemos controlar para evitar las fallas de ejecucion
+console.log("Lo intentamos dividir : 10/0, el resultado es:")
+try{
+    let result = 10/0;
+    console.log(result)
+
+}catch(error){
+    console.log("Ocurrio un  error"+ error.message);
+}
+
+console.log("Lo intentamos dividir : 0/10, el resultado es:")
+try{
+    let result = 0/10;
+    console.log(result)
+
+}catch(error){
+    console.log("Ocurrio un  error"+ error.message);
+}
+
+console.log("Lo intentamos dividir : a/10, el resultado es:")
+try{
+    let result = "a"/10;
+    console.log(result)
+
+}catch(error){
+    console.log("Ocurrio un  error"+ error.message);
+}
+
+console.log("Lo intentamos dividir : a / 10, el resultado es:")
+try{
+    let result = a / 10; // Dividir una variable no definida entre 0
+    console.log(result)
+
+}catch(error){
+    console.log("Ocurrio un  error"+ error.message);
+}
+
+console.log("Intentamos dividir: el valor de la variabole x / entre el valor de la variable y, el resultado es:")
+try{
+    let x=8, y= 2, result = x/y; // Dividir una variable definida
+    console.log(result)
+
+}catch(error){
+    console.log("Ocurrio un  error"+ error.message);
+}
+
+console.log("%c5.- Control de Ciclos (BREAK/ CONTINUA) ",style_console);
+
+// En algunas ocasiones será importante detener un ciclo de manera abrupta para controlar casos especiales de un ciclo
+
+console.log("Vamos a contar del 1 al 10... ")
+
+for(let num=1; num<=10; num++)
+    console.log(num);
+
+console.log("Ahora necesitamos que si llegas a 7 pares de contar... suponiendo que solo por hoy es de mala suerte... ")
+
+for(let num=1; num<=10; num++)
+    if(num == 7)
+        break;
+    else
+console.log(num);
+
+console.log("Ahora necesitamos que si llegas a 7 te saltes ese numero y continues ")
+
+for(let num=1; num<=10; num++)
+    if(num == 7)
+        continue;
+    else
+console.log(num);
+
+console.log("%c6.- Ciclo Iterativo - (FOR) ",style_console);
+
+// Recorre de manera iterativa (i), de incremental o decremental
+
+console.log("Los días de la semana son: ")
+let dias = ["Domingo","Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"]
+
+for(let i=0; i<dias.length; i++)
+    console.log(dias[i])
+
+console.log("Ahora vamos a imprimir los meses en orden descendente... ")
+
+const meses = ["Enero","Febrero", "Marzo", "Abril","Mayo","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+for(let i=11; i>=0; i--)
+    console.log(meses[i])
+
+console.log("%c6.- Ciclo Condicionales - (WHILE) ",style_console);
+
+// Estos ciclos (BUCLE) dependen de una condición para continuar ejecutandose
+
+let finDeSemana = false;
+let j=0;
+let mensaje;
+
+
+while(j<dias.length){
+    switch(j){ //Usamos 'J' para que coincida con el índice
+        case 0 : 
+            finDeSemana= true;
+            mensaje = 'Mormingooooooo.. ZzzzzzzzZZZZZzzz  (￣o￣) . z Z';
+            break;
+        case 1 : 
+            finDeSemana= false;
+            mensaje = "San Lunes a Chambiar... (┬┬﹏┬┬)"
+            break;
+        case 2 : 
+            finDeSemana= false;
+            mensaje = "Martirio.... (╯▔皿▔)╯"
+            break;
+        case 3 : 
+            finDeSemana= false;
+            mensaje = "Miercodi.... 0_o"
+            break;
+        case 4 : 
+            finDeSemana= false;
+            mensaje = "Jueveves de funa (/≧▽≦)/"
+            break;
+        case 5 : 
+            finDeSemana= false;
+            mensaje = "Viernesito de Sueñito ＼(((￣(￣(￣▽￣)￣)￣)))／"
+            break;
+        case 6 : 
+            finDeSemana= true;
+            mensaje = "Sabado de quehacer -_-, "
+            break;
+    }   
+    
+    // Imprimir el nombre del dia y su mensaje
+    if(!finDeSemana){
+        console.log(`Día ${j} ${dias[j]}`);
+        console.log(`Mensaje del dia ${mensaje}`);
+    }
+    j++
+}
