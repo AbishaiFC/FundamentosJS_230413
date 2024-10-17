@@ -14,7 +14,7 @@ Previo a iniciar el desarrollo de software para web usando el framework de NodeJ
 |4.|Ejercicio 02: Tipos de de Dato (Undefined, Boolean, Number, String, BigInt, Symbol, Null, Function)|10|✅ Finalizada|
 |5.|Ejercicio 03: Repaso de objetos en JS|19|✅ Finalizada|
 |6.|Ejercicio 04: Repaso de Arreglos en JS|18|✅ Finalizada|
-|7-|Ejercicio 05: Repaso de Estructuras de Control en JS|16| Activa| 
+|7-|Ejercicio 05: Repaso de Estructuras de Control en JS|16|✅ Finalizada| 
 
 ### Autor
 Osvaldo Abishai Flores Campos
